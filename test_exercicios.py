@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 import time
+import os
 
 
 @pytest.fixture
@@ -11,7 +12,8 @@ def driver():
     chrome_options = Options()
     chrome_options.add_argument("--headless")  # roda sem interface
     driver = webdriver.Chrome(options=chrome_options)
-    driver.get("file://" + __import__("os").path.abspath("index.html"))
+    caminho_html = os.path.abspath("index.html")
+    driver.get(f"file://{caminho_html}")
     yield driver
     driver.quit()
 
