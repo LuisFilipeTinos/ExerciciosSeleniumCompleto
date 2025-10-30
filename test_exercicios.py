@@ -16,7 +16,7 @@ def driver():
     driver.quit()
 
 
-# ----------------- LOGIN -----------------
+# ----------------- LOGIN ------------------
 def test_login_sucesso(driver):
     driver.find_element(By.ID, "username").send_keys("admin")
     time.sleep(1)
