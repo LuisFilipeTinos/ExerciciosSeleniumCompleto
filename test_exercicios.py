@@ -2,16 +2,16 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.chrome.options import Options
 import time
-
-# Caminho do seu arquivo HTML local
-URL = ".\\index.html"
 
 
 @pytest.fixture
 def driver():
-    driver = webdriver.Chrome()
-    driver.get(URL)
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")  # roda sem interface
+    driver = webdriver.Chrome(options=chrome_options)
+    driver.get("file://" + __import__("os").path.abspath("index.html"))
     yield driver
     driver.quit()
 
