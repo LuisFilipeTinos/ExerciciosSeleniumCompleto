@@ -1,0 +1,13 @@
+name: Integração Contínua
+on: 
+  push:
+    branches: 
+      ['master']
+jobs: 
+  integracao-continua:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+      - name: Rodar os testes com pytest
+        run: pytest

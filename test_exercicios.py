@@ -66,6 +66,8 @@ def test_checkboxes(driver):
 
 # ----------------- RADIO BUTTONS -----------------
 def test_radiobuttons(driver):
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    time.sleep(1)
     radios = driver.find_elements(By.NAME, "gender")
 
     # Selecionar Masculino
@@ -87,6 +89,7 @@ def test_radiobuttons(driver):
 
 # ----------------- DROPDOWN -----------------
 def test_dropdown(driver):
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     time.sleep(1)
     select = Select(driver.find_element(By.ID, "country"))
     time.sleep(1)
@@ -101,6 +104,8 @@ def test_dropdown(driver):
 
 # ----------------- LISTA DE TAREFAS -----------------
 def test_lista_tarefas(driver):
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    time.sleep(1)
     input_task = driver.find_element(By.ID, "taskInput")
     add_btn = driver.find_element(By.ID, "addTaskBtn")
     task_list = driver.find_element(By.ID, "taskList")
