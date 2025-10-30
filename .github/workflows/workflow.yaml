@@ -16,4 +16,5 @@ jobs:
       - name: Instalar Pytest e rodar os testes
         run: |
           pip install pytest 
+          pip install selenium
           pytest
