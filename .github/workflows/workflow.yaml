@@ -9,5 +9,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-      - name: Rodar os testes com pytest
-        run: pytest
+      - name: Instalar Python
+      - uses: actions/setup-python@v6
+        with: 
+          python-version: '3.13'
+      - name: Instalar Pytest e rodar os testes
+        run: |
+          pip install pytest 
+          pytest
