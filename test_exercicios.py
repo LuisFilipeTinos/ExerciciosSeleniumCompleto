@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import Select
 import time
 
 # Caminho do seu arquivo HTML local
-URL = "D:\\ETEC - ORGANIZAÇÃO\\QTS - Proposta em Andamento\\ExercíciosSelenium\\index.html"
+URL = ".\\index.html"
 
 
 @pytest.fixture
