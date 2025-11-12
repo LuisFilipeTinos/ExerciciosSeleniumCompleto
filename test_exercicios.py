@@ -40,7 +40,7 @@ def test_login_falha(driver):
     time.sleep(1)
     message = driver.find_element(By.ID, "message").text
     time.sleep(1)
-    assert message == "Usuário ou senha incorretos. - -"
+    assert message == "Usuário ou senha incorretos."
 
 
 # ----------------- CHECKBOXES -----------------
