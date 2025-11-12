@@ -1,20 +1,20 @@
-name: Integração Contínua
-on: 
+name: Integração Contínua #nome do workflow - nome do fluxo de trabalho
+on: #quando vai rodar? Quando fizermos push na branch master!
   push:
     branches: 
       ['master']
-jobs: 
-  integracao-continua:
-    runs-on: ubuntu-latest
+jobs: #trabalhos a serem executados na automação pelo GitHub
+  integracao-continua: #nome do trabalho
+    runs-on: ubuntu-latest #roda em uma máquina virtual linux ubuntu hospedada pelo GitHub
 
-    steps:
-      - uses: actions/checkout@v5
-      - name: Instalar Python
-        uses: actions/setup-python@v6
+    steps: #passos do trabalho a ser executado
+      - uses: actions/checkout@v5 #ação oficial do GitHub para obter os arquivos (baixa o código do repositório no ambiente de execução da automação)
+      - name: Instalar Python #nome de um dos passos
+        uses: actions/setup-python@v6 #ação oficial do GitHub para a instalação do Python e a configuração no ambiente
         with: 
-          python-version: '3.13'
-      - name: Instalar Pytest e rodar os testes
-        run: |
+          python-version: '3.13' #especifica a versão do Python a ser instalada
+      - name: Instalar Pytest e rodar os testes #nome de outro passo
+        run: | #indica que há mais de um comando a ser rodado e roda os testes com pytest
           pip install pytest 
           pip install selenium
-          pytest
+          pytest 
